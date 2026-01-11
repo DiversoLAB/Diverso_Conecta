@@ -168,7 +168,7 @@ a.open[aria-disabled="true"]{
   padding:10px 12px;
   cursor:pointer;
   color:var(--text);
-  font-size:var(--text-md);
+  font-size:var(--text-sm);
   font-weight:var(--weight-regular);
   transition:background .15s ease,border-color .15s ease;
 }

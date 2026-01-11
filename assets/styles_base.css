@@ -125,7 +125,7 @@ a.open:hover,
 a.open:active,
 a.open:focus{
   font-family:inherit;
-  font-size:var(--text-sm);
+  font-size:var(--text-md);
   font-weight:var(--weight-medium);
   color:var(--btn-text);
   text-decoration:none;

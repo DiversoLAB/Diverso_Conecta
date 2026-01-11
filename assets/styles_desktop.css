@@ -1,1 +1,23 @@
+/* ===== Escritorio / pantallas anchas ===== */
+@media (min-width:901px){
+
+  .side{
+    height:auto;
+    min-height:78vh;
+    overflow:auto;
+  }
+
+  .main iframe{
+    min-height:78vh;
+  }
+
+  .header{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .header .brand{ justify-content:flex-start; }
+  .header .top-buttons{ justify-content:flex-end; }
+}
 

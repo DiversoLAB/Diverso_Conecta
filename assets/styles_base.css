@@ -103,7 +103,7 @@ body {
   border-radius:10px;
   padding:8px 12px;
   font-family:inherit;
-  font-size:var(--text-sm);
+  font-size:var(--text-md);
   font-weight:var(--weight-medium);
   line-height:1;
   letter-spacing:.02em;
@@ -142,7 +142,7 @@ a.open[aria-disabled="true"]{
 
 .group h3{
   margin:8px 8px 6px;
-  font-size:var(--text-sm);
+  font-size:var(--text-lg);
   font-weight:var(--weight-bold);
   letter-spacing:.2px;
   opacity:.9;

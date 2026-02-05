@@ -13,10 +13,11 @@ async function loadComponent(containerId, file) {
 
 // ===================== estado: página desde ?p= =====================
 const params = new URLSearchParams(location.search);
-const page = params.get("p") || "formularios"; // "formularios" | "visualizaciones"
+const page = params.get("p") || "formularios"; // "formularios" | "visualizaciones" | "sice"
 const STORAGE_KEYS = {
   formularios: "conecta_last_form",
   visualizaciones: "conecta_last_viz",
+  sice: "conecta_last_sice",
 };
 
 // ===================== flujo principal =====================
@@ -33,18 +34,23 @@ const STORAGE_KEYS = {
   // 2) Marcar botón activo del header y wire de navegación
   const btnForms = document.getElementById("btnForms");
   const btnDash  = document.getElementById("btnDash");
+  const btnSICE = document.getElementById("btnSICE");
   if (btnForms && btnDash) {
     btnForms.classList.toggle("active", page === "formularios");
     btnDash.classList.toggle("active",  page === "visualizaciones");
+    btnSICE.classList.toggle("active", page === "sice");
     btnForms.onclick = () => (location.href = "?p=formularios");
     btnDash .onclick = () => (location.href = "?p=visualizaciones");
+    btnSICE.onclick = () => (location.href = "?p=sice");
   }
 
   // 3) Cargar sidebar según la página
   if (page === "formularios") {
     await loadComponent("sidebar", "./components/sidebar-formularios.html");
-  } else {
+  } else if (page === "visualizaciones") {
     await loadComponent("sidebar", "./components/sidebar-visualizaciones.html");
+  } else if (page === "sice") {
+    await loadComponent("sidebar", "./components/sidebar-SICE.html");
   }
 
   // 4) Cargar viewer (sin contenedor extra, evita "recuadro del recuadro")

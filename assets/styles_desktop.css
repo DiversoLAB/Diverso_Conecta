@@ -1,15 +1,25 @@
 /* ===== Desktop / wide screens ===== */
 @media (min-width: 901px) {
+  .layout {
+    align-items: stretch;
+  }
+
   .side {
-    height: calc(100vh - 200px); 
-    max-height: calc(100vh - 200px); 
-    overflow-y: auto; 
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
-  .main iframe {
+  .main {
     min-height: 78vh;
   }
+
+  .main iframe {
+    height: 100%;
+    min-height: 78vh;
+  }
+}
 
   .header {
     flex-direction: row;

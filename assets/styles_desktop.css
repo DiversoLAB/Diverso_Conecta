@@ -1,9 +1,10 @@
 /* ===== Desktop / wide screens ===== */
 @media (min-width: 901px) {
   .side {
-    height: auto;
-    min-height: 78vh;
-    overflow: auto;
+    height: calc(100vh - 200px); 
+    max-height: calc(100vh - 200px); 
+    overflow-y: auto; 
+    overflow-x: hidden;
   }
 
   .main iframe {

@@ -1,15 +1,33 @@
 /* ===== Desktop / wide screens ===== */
 @media (min-width: 901px) {
+
+  /* 1) El contenedor define la altura común */
+  .layout {
+    align-items: stretch;
+    height: calc(100vh - 180px);
+  }
+
+  /* 2) Ambas columnas ocupan exactamente esa altura */
   .side {
-    height: auto;
-    min-height: 78vh;
-    overflow: auto;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
+  .main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  /* 3) El iframe llena el contenedor, sin imponer altura propia */
   .main iframe {
-    min-height: 78vh;
+    flex: 1;
+    min-height: 0;
   }
 
+  /* Header intacto */
   .header {
     flex-direction: row;
     align-items: center;

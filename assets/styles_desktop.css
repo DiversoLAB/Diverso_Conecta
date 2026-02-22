@@ -1,39 +1,39 @@
 /* ===== Desktop / wide screens ===== */
 @media (min-width: 901px) {
 
-    .layout {
+.layout {
     align-items: stretch;
   }
 
-    .side {
+.side {
     height: auto;
-    min-height: 0;
+    min-height: 78vh;
     overflow-y: auto;
     overflow-x: hidden;
   }
   
-  .main {
+.main {
     min-height: 78vh;
     display: flex;
     flex-direction: column;
   }
   
-  .main iframe {
+.main iframe {
     flex: 1;
     min-height: 78vh;
   }
   
-  .header {
+.header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
-  .header .brand {
+.header .brand {
     justify-content: flex-start;
   }
 
-  .header .top-buttons {
+.header .top-buttons {
     justify-content: flex-end;
   }
 }

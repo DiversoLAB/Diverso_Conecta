@@ -1,26 +1,28 @@
 /* ===== Desktop / wide screens ===== */
 @media (min-width: 901px) {
-  .layout {
+
+    .layout {
     align-items: stretch;
   }
 
-  .side {
+    .side {
     height: auto;
-    max-height: none;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
   }
-
+  
   .main {
     min-height: 78vh;
+    display: flex;
+    flex-direction: column;
   }
-
+  
   .main iframe {
-    height: 100%;
+    flex: 1;
     min-height: 78vh;
   }
-}
-
+  
   .header {
     flex-direction: row;
     align-items: center;

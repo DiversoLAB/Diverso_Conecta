@@ -13,11 +13,11 @@ async function loadComponent(containerId, file) {
 
 // ===================== estado: página desde ?p= =====================
 const params = new URLSearchParams(location.search);
-const page = params.get("p") || "formularios"; // "formularios" | "visualizaciones" | "sice"
+const page = params.get("p") || "formularios"; // "formularios" | "visualizaciones" | "sgc + sice"
 const STORAGE_KEYS = {
   formularios: "conecta_last_form",
   visualizaciones: "conecta_last_viz",
-  sice: "conecta_last_sice",
+  sgcsice: "conecta_last_sgcsice",
 };
 
 // ===================== flujo principal =====================
@@ -34,14 +34,14 @@ const STORAGE_KEYS = {
   // 2) Marcar botón activo del header y wire de navegación
   const btnForms = document.getElementById("btnForms");
   const btnDash  = document.getElementById("btnDash");
-  const btnSICE = document.getElementById("btnSICE");
+  const btnSGCSICE = document.getElementById("btnSGCSICE");
   if (btnForms && btnDash) {
     btnForms.classList.toggle("active", page === "formularios");
     btnDash.classList.toggle("active",  page === "visualizaciones");
-    btnSICE.classList.toggle("active", page === "sice");
+    btnSGCSICE.classList.toggle("active", page === "sgcsice");
     btnForms.onclick = () => (location.href = "?p=formularios");
     btnDash .onclick = () => (location.href = "?p=visualizaciones");
-    btnSICE.onclick = () => (location.href = "?p=sice");
+    btnSGCSICESICE.onclick = () => (location.href = "?p=sgcsice");
   }
 
   // 3) Cargar sidebar según la página
@@ -49,8 +49,8 @@ const STORAGE_KEYS = {
     await loadComponent("sidebar", "./components/sidebar-formularios.html");
   } else if (page === "visualizaciones") {
     await loadComponent("sidebar", "./components/sidebar-visualizaciones.html");
-  } else if (page === "sice") {
-    await loadComponent("sidebar", "./components/sidebar-SICE.html");
+  } else if (page === "sgcsice") {
+    await loadComponent("sidebar", "./components/sidebar-SGC+SICE.html");
   }
 
   // 4) Cargar viewer (sin contenedor extra, evita "recuadro del recuadro")

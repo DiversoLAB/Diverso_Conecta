@@ -41,7 +41,7 @@ const STORAGE_KEYS = {
     btnSGCSICE.classList.toggle("active", page === "sgcsice");
     btnForms.onclick = () => (location.href = "?p=formularios");
     btnDash .onclick = () => (location.href = "?p=visualizaciones");
-    btnSGCSICESICE.onclick = () => (location.href = "?p=sgcsice");
+    btnSGCSICE.onclick = () => (location.href = "?p=sgcsice");
   }
 
   // 3) Cargar sidebar según la página
